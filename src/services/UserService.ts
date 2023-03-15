@@ -37,7 +37,7 @@ export class UserService extends Subscribable<ParseIdTokenResponseModel> {
     if (!idToken) return logOutCb();
 
     HttpService.setAccessToken(idToken);
-    SocketService.setAccessToken(idToken);
+    SocketService.setAccessToken?.(idToken);
 
     HttpService.setLogoutCb(logOutCb);
 
