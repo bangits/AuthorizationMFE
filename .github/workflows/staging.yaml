@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: ['develop']
+  pull_request:
+    branches: ['develop']
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Building js
+        run: |
+          yarn
+          yarn build
+
+      - name: Azure Login
+        uses: Azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Run az storage blob update
+        run: az storage blob upload --overwrite --container-name mfe-staging --account-name storageaccountatom --file ./dist/atom-authorization.js --name atom-authorization.js --account-key ${{ secrets.AZURE_ACCOUNT_KEY }}
+
+      - name: Purge CDN endpoint
+        run: az cdn endpoint purge --profile-name atom --resource-group AksAtom9f2e-rg --name atom-cdn --content-paths '/mfe-staging/atom-authorization.js'
