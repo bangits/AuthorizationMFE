@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: ['develop']
+    branches: ['jwt-login']
   pull_request:
-    branches: ['develop']
+    branches: ['jwt-login']
 
   workflow_dispatch:
 
