@@ -6,7 +6,7 @@ export const getLoginValidationSchema = async (
   t: UseValidationTranslationReturnValue
 ): Promise<SchemaOf<Omit<LoginViewModel, 'returnUrl'>>> => {
   return object({
-    email: string().email(t.email()).min(3, t.max(6)).max(300, t.max(300)).required(t.required()),
+    email: string().email(t.email()).min(3, t.max(6)).max(350, t.max(350)).required(t.required()),
     password: string()
       .min(8, t.min(8))
       .max(55, t.max(55))
