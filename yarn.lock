@@ -272,7 +272,7 @@
     single-spa "^5.9.3"
     single-spa-react "^4.6.0"
 
-"@atom/common@^2.2.32", "@atom/common@^2.2.49", "@atom/common@^2.2.52", "@atom/common@^2.2.54", "@atom/common@^2.2.62", "@atom/common@^2.2.64", "@atom/common@^2.2.72":
+"@atom/common@^2.2.32", "@atom/common@^2.2.49", "@atom/common@^2.2.52", "@atom/common@^2.2.54", "@atom/common@^2.2.62", "@atom/common@^2.2.64":
   version "2.2.72"
   resolved "https://pkgs.dev.azure.com/bangitsllc/Common/_packaging/Bangits.Atom.Common/npm/registry/@atom/common/-/common-2.2.72.tgz#8294413904d4907adfcb45522910d2c53f9c30d8"
   integrity sha1-gpRBOQTUkHrfy0VSKRDSxT+cMNg=
@@ -283,6 +283,24 @@
     "@microsoft/signalr" "^6.0.1"
     "@microsoft/signalr-protocol-msgpack" "^6.0.1"
     "@my-ui/core" "^0.9.14"
+    axios "^0.23.0"
+    dayjs "^1.10.7"
+    formik "^2.2.9"
+    query-string "^7.0.1"
+    react "^17.0.2"
+    single-spa "^5.9.3"
+    single-spa-react "^4.6.0"
+
+"@atom/common@^2.2.85":
+  version "2.2.85"
+  resolved "https://pkgs.dev.azure.com/bangitsllc/Common/_packaging/Bangits.Atom.Common/npm/registry/@atom/common/-/common-2.2.85.tgz#94098296d4822ebf975e297ddc696b3da798f2d3"
+  integrity sha1-lAmCltSCLr+XXil93GlrPaeY8tM=
+  dependencies:
+    "@atom/cms-management" "^0.2.12"
+    "@automapper/classes" "^7.0.2"
+    "@automapper/core" "^7.0.2"
+    "@microsoft/signalr" "^6.0.1"
+    "@microsoft/signalr-protocol-msgpack" "^6.0.1"
     axios "^0.23.0"
     dayjs "^1.10.7"
     formik "^2.2.9"
