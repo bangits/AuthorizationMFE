@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 
 // Configurations for sass, which also include global sass file parsing
 const configureSass = (isDevelopment = true) => [
@@ -55,15 +56,26 @@ const configureAliases = () => ({
   '@': path.resolve(__dirname, './src')
 });
 
-const configureSharedWebpack = (isDevelopment) => ({
-  module: {
-    rules: configureSass(isDevelopment)
-  },
-  resolve: {
-    alias: configureAliases()
-  },
-  // watchOptions: configureWatchOptions()
-});
+const configPlugins = (webpackConfigEnv) => [
+  new DefinePlugin({
+    'process.env': JSON.stringify(webpackConfigEnv)
+  })
+];
+
+const configureSharedWebpack = (webpackConfigEnv) => {
+  const isDevelopment = !webpackConfigEnv.WEBPACK_BUILD;
+
+  return {
+    plugins: configPlugins(webpackConfigEnv),
+    module: {
+      rules: configureSass(isDevelopment)
+    },
+    resolve: {
+      alias: configureAliases()
+    },
+    watchOptions: configureWatchOptions()
+  };
+};
 
 module.exports = {
   configureAliases,

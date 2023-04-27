@@ -10,7 +10,7 @@
     "module": "System",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "types": ["reflect-metadata"],
+    "types": ["reflect-metadata", "node"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "allowJs": true,

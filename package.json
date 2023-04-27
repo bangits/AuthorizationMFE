@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "start": "webpack serve --mode=production",
+    "start:logger": "webpack serve --mode=production --env logger",
     "start:dev": "webpack serve --mode=development",
     "start:standalone": "webpack serve --env standalone",
     "build": "webpack --mode=production",
