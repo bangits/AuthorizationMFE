@@ -34,6 +34,7 @@ export const AuthenticatedProvider: FC = ({ children }) => {
     <AuthenticatedContext.Provider
       value={{
         user,
+        userRefetch: userService.getUser,
         updateUserInfo: (updatedInfo: Partial<ParseIdTokenResponseModel>) => {
           const updatedUser = { ...user, ...updatedInfo };
 

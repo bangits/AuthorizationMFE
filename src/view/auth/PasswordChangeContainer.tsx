@@ -1,14 +1,14 @@
 import { AuthenticatedContext } from '@/atom-authorization';
 import { historyService, useTranslation } from '@atom/common';
 import { alert } from '@atom/design-system';
-import { useCallback, useContext } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import { PasswordChange } from './PasswordChange';
 import { PasswordChangeTypes, userApi } from '@atom/user-management';
 import { LOCAL_STORAGE_CONSTANTS } from '@/configs/constants';
 
 export const PasswordChangeContainer = () => {
   const t = useTranslation();
-  const { user } = useContext(AuthenticatedContext);
+  const { user, userRefetch } = useContext(AuthenticatedContext);
   const [passwordChange, { isLoading }] = userApi.useChangePasswordAfterLogicMutation();
 
   const onSubmit = useCallback(
@@ -23,7 +23,9 @@ export const PasswordChangeContainer = () => {
           alert.success({
             alertLabel: t.get('passwordChangedSuccess')
           });
-          return historyService.redirectToURL('/');
+          userRefetch(true).then(() => {
+            return historyService.redirectToURL('/');
+          });
         })
         .catch(() =>
           alert.error({

@@ -19,8 +19,8 @@ export class UserService extends Subscribable<ParseIdTokenResponseModel> {
     if (this.user) cb(this.user);
   };
 
-  getUser = async () => {
-    if (this.user) {
+  getUser = async (forceFetch: boolean = false) => {
+    if (this.user && !forceFetch) {
       this.publish(this.user);
 
       return;
