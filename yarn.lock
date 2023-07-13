@@ -450,6 +450,26 @@
     single-spa "^5.9.3"
     single-spa-react "^4.6.0"
 
+"@atom/common@^3.0.4":
+  version "3.0.4"
+  resolved "https://pkgs.dev.azure.com/bangitsllc/Common/_packaging/Bangits.Atom.Common/npm/registry/@atom/common/-/common-3.0.4.tgz#3e7624aec244757583a2f9dc737ac7d054ae8555"
+  integrity sha1-PnYkrsJEdXWDovncc3rH0FSuhVU=
+  dependencies:
+    "@atom/authorization" "^0.1.7"
+    "@atom/cms-management" "^0.3.0"
+    "@atom/design-system" "^5.3.7"
+    "@automapper/classes" "^7.0.2"
+    "@automapper/core" "^7.0.2"
+    "@microsoft/signalr" "^6.0.1"
+    "@microsoft/signalr-protocol-msgpack" "^6.0.1"
+    axios "^0.23.0"
+    dayjs "^1.10.7"
+    formik "^2.2.9"
+    query-string "^7.0.1"
+    react "^17.0.2"
+    single-spa "^5.9.3"
+    single-spa-react "^4.6.0"
+
 "@atom/design-system@4.5.8":
   version "4.5.8"
   resolved "https://pkgs.dev.azure.com/bangitsllc/Common/_packaging/Bangits.Atom.Common/npm/registry/@atom/design-system/-/design-system-4.5.8.tgz#f2a8a1ad575b593cf6dbd4abce9d2558ccceb375"
@@ -569,7 +589,7 @@
     regenerator-transform "^0.14.5"
     vite-plugin-svgr "^2.4.0"
 
-"@atom/design-system@^5.6.4":
+"@atom/design-system@^5.3.7", "@atom/design-system@^5.6.4":
   version "5.6.4"
   resolved "https://pkgs.dev.azure.com/bangitsllc/Common/_packaging/Bangits.Atom.Common/npm/registry/@atom/design-system/-/design-system-5.6.4.tgz#9fef3b70a44699cadc92f8bbe9e705e254c69f3c"
   integrity sha1-n+87cKRGmcrckvi76ecF4lTGnzw=

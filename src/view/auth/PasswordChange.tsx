@@ -4,7 +4,7 @@ import { PasswordField } from '@atom/user-management';
 import { Form, FormikHelpers } from 'formik';
 import { FC, useMemo } from 'react';
 import { ChangePasswordAfterLoginViewModel } from '../models';
-import { changePasswordAfterLogicValidationSchema } from '@/validators';
+import { changePasswordAfterLoginValidationSchema } from '@/validators';
 
 export type PasswordChangeProps = {
   onSubmit: (
@@ -18,7 +18,7 @@ export type PasswordChangeProps = {
 
 export const PasswordChange: FC<PasswordChangeProps> = ({ onSubmit, canSkip, onSkip, isLoading }) => {
   const validationT = useValidationTranslation();
-  const validationSchema = useAsync(() => changePasswordAfterLogicValidationSchema(validationT), []);
+  const validationSchema = useAsync(() => changePasswordAfterLoginValidationSchema(validationT), []);
 
   const initialVallues: ChangePasswordAfterLoginViewModel = useMemo(
     () => ({

@@ -2,7 +2,7 @@ import { ChangePasswordAfterLoginViewModel } from '@/view/models';
 import { regexLibrary, UseValidationTranslationReturnValue } from '@atom/common';
 import { object, SchemaOf, ref, string } from 'yup';
 
-export const changePasswordAfterLogicValidationSchema = async (
+export const changePasswordAfterLoginValidationSchema = async (
   t: UseValidationTranslationReturnValue
 ): Promise<SchemaOf<ChangePasswordAfterLoginViewModel>> => {
   return object({
@@ -16,6 +16,6 @@ export const changePasswordAfterLogicValidationSchema = async (
       .max(55, t.max(55))
       .required(t.required())
       .matches(regexLibrary.PASSWORD_INPUT, t.password())
-      .oneOf([ref('newPassword'), null], 'Passwords must be same.')
+      .oneOf([ref('newPassword'), null], t.passwordsDontMatch())
   });
 };

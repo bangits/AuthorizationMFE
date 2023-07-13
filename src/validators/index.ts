@@ -1,2 +1,2 @@
 export * from './getLoginValidationSchema';
-export * from './changePasswordAfterLogicValidationSchema';
+export * from './changePasswordAfterLoginValidationSchema';
