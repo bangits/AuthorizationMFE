@@ -6,8 +6,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { LogoutCallback, PasswordChangeContainer, SignInCallback, SignInContainer } from './auth';
 import { ROUTES } from './constants';
-import { FormikHelpers } from 'formik';
-import { LoginViewModel } from './models';
 import { AuthenticatedProvider } from '@/atom-authorization';
 
 const App = () => {
