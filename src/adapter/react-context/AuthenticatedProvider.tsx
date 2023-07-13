@@ -19,15 +19,11 @@ export const AuthenticatedProvider: FC = ({ children }) => {
   useEffect(() => {
     if (!wasCalledGetUserBefore) {
       changeLoading(true);
-
       userService.getUser();
     }
-
     userService.subscribeForUpdate((user) => {
       setUser(user);
-
       changeLoading(false);
-
       wasCalledGetUserBefore = true;
     });
   }, []);

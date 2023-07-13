@@ -1,6 +1,6 @@
 {
   "name": "@atom/authorization",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "",
   "types": "./dist/atom-authorization.d.ts",
   "files": [
@@ -81,8 +81,8 @@
   },
   "dependencies": {
     "@atom/common": "^2.2.85",
-    "@atom/design-system": "^3.1.0",
-    "@atom/user-management": "^0.2.0",
+    "@atom/design-system": "^5.6.4",
+    "@atom/user-management": "^0.2.8",
     "@automapper/classes": "^7.0.2",
     "@automapper/core": "^7.0.2",
     "@reduxjs/toolkit": "^1.6.1",
