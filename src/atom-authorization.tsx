@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
 import './index';
+import './index.css';
 import App from './view';
 
 const lifecycles = singleSpaReact({
@@ -20,3 +21,4 @@ export const { bootstrap, mount, unmount } = lifecycles;
 export * from './adapter/react-context';
 export * from './permittions';
 export * from './services';
+
