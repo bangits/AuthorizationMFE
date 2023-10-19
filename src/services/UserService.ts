@@ -19,8 +19,8 @@ export class UserService extends Subscribable<ParseIdTokenResponseModel> {
     if (this.user) cb(this.user);
   };
 
-  getUser = async () => {
-    if (this.user) {
+  getUser = async (forceFetch: boolean = false) => {
+    if (this.user && !forceFetch) {
       this.publish(this.user);
 
       return;
@@ -30,6 +30,7 @@ export class UserService extends Subscribable<ParseIdTokenResponseModel> {
 
     const logOutCb = () => {
       this.localStorageService.removeItem(LOCAL_STORAGE_CONSTANTS.USER_ACCESS_TOKEN);
+      this.localStorageService.removeItem(LOCAL_STORAGE_CONSTANTS.IS_CHANGE_PASSWORD_SKIPPED);
 
       window.location.replace(ROUTES.baseUrl + ROUTES.loginUrl);
     };

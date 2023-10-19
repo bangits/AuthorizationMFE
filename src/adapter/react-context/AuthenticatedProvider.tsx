@@ -19,15 +19,11 @@ export const AuthenticatedProvider: FC = ({ children }) => {
   useEffect(() => {
     if (!wasCalledGetUserBefore) {
       changeLoading(true);
-
       userService.getUser();
     }
-
     userService.subscribeForUpdate((user) => {
       setUser(user);
-
       changeLoading(false);
-
       wasCalledGetUserBefore = true;
     });
   }, []);
@@ -38,6 +34,7 @@ export const AuthenticatedProvider: FC = ({ children }) => {
     <AuthenticatedContext.Provider
       value={{
         user,
+        userRefetch: userService.getUser,
         updateUserInfo: (updatedInfo: Partial<ParseIdTokenResponseModel>) => {
           const updatedUser = { ...user, ...updatedInfo };
 

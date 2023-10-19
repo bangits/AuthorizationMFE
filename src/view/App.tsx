@@ -4,8 +4,9 @@ import { AtomCommonProvider } from '@atom/common';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import { LogoutCallback, SignInCallback, SignInContainer } from './auth';
+import { LogoutCallback, PasswordChangeContainer, SignInCallback, SignInContainer } from './auth';
 import { ROUTES } from './constants';
+import { AuthenticatedProvider } from '@/atom-authorization';
 
 const App = () => {
   const [store, setStore] = useState(null);
@@ -24,6 +25,12 @@ const App = () => {
         <AtomCommonProvider initializeLanguage>
           <Router basename={ROUTES.baseUrl}>
             <Switch>
+              <Route path={ROUTES.passChange} exact>
+                <AuthenticatedProvider>
+                  <PasswordChangeContainer />
+                </AuthenticatedProvider>
+              </Route>
+
               <Route path={ROUTES.loginUrl} exact>
                 <SignInContainer />
               </Route>
