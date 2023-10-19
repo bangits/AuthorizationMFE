@@ -1,4 +1,5 @@
 import { PrimaryKey } from '@atom/common';
+import type { PasswordChangeTypes } from '@atom/user-management';
 
 export class ParseIdTokenResponseModel {
   userId: PrimaryKey;
@@ -10,4 +11,5 @@ export class ParseIdTokenResponseModel {
   projectId: number;
   lastName: string;
   firstName: string;
+  passwordChangeTypeId: PasswordChangeTypes;
 }

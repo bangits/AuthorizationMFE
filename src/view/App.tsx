@@ -1,12 +1,16 @@
 import createStore from '@/adapter/redux/store';
+import { AuthenticatedProvider } from '@/atom-authorization';
 import { containerInstance } from '@/di';
 import { AtomCommonProvider } from '@atom/common';
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import { LogoutCallback, PasswordChangeContainer, SignInCallback, SignInContainer } from './auth';
+import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { LogoutCallback, SignInCallback, SignInContainer } from './auth';
 import { ROUTES } from './constants';
-import { AuthenticatedProvider } from '@/atom-authorization';
+
+const PasswordChangeContainer = lazy(async () => ({
+  default: (await System.import('@atom/user-management')).PasswordChangeContainer
+}));
 
 const App = () => {
   const [store, setStore] = useState(null);
@@ -27,7 +31,9 @@ const App = () => {
             <Switch>
               <Route path={ROUTES.passChange} exact>
                 <AuthenticatedProvider>
-                  <PasswordChangeContainer />
+                  <Suspense fallback={<></>}>
+                    <PasswordChangeContainer />
+                  </Suspense>
                 </AuthenticatedProvider>
               </Route>
 
