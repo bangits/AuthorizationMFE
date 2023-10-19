@@ -110,5 +110,10 @@
     "react-redux",
     "@automapper/core",
     "@automapper/classes"
-  ]
+  ],
+  "resolutions": {
+    "@atom/common": "^3.0.4",
+    "@atom/design-system": "^5.6.4",
+    "@atom/user-management": "^0.2.8"
+  }
 }
