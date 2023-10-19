@@ -1,6 +1,6 @@
 {
   "name": "@atom/authorization",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "main": "",
   "types": "./dist/atom-authorization.d.ts",
   "files": [
@@ -78,12 +78,12 @@
     "webpack-config-single-spa-react-ts": "^3.0.0",
     "webpack-config-single-spa-ts": "^3.0.0",
     "webpack-dev-server": "^4.0.0-rc.0",
-    "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
     "@atom/common": "^2.2.85",
     "@atom/design-system": "^3.1.0",
     "@atom/user-management": "^0.2.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
     "@automapper/classes": "^7.0.2",
     "@automapper/core": "^7.0.2",
     "@reduxjs/toolkit": "^1.6.1",

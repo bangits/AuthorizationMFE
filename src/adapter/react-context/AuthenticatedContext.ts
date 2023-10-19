@@ -1,4 +1,4 @@
-import { ParseIdTokenResponseModel } from '@atom/user-management';
+import { ParseIdTokenResponseModel } from '@/domain/models';
 import { createContext } from 'react';
 
 export interface IAuthenticatedContext {

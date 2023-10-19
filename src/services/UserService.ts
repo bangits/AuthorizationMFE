@@ -1,9 +1,9 @@
 import { LOCAL_STORAGE_CONSTANTS } from '@/configs';
 import { containerInstance, DI_CONSTANTS } from '@/di';
+import { ParseIdTokenResponseModel } from '@/domain/models';
 import { AuthUseCase } from '@/domain/use-case';
 import { ROUTES } from '@/view/constants';
 import { HttpService, SocketService, StorageService, Subscribable } from '@atom/common';
-import { ParseIdTokenResponseModel } from '@atom/user-management';
 import { inject, injectable } from 'inversify';
 
 @injectable()

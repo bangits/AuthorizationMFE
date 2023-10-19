@@ -1,7 +1,7 @@
 import { containerInstance, DI_CONSTANTS } from '@/di';
+import { ParseIdTokenResponseModel } from '@/domain/models';
 import { UserService } from '@/services';
 import { useLoading } from '@atom/common';
-import { ParseIdTokenResponseModel } from '@atom/user-management';
 import { FC, useEffect, useState } from 'react';
 import { AuthenticatedContext } from './AuthenticatedContext';
 
