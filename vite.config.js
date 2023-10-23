@@ -2,6 +2,8 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 
+const packageJSON = require('./package.json');
+
 export default defineConfig({
   base: './',
   resolve: {
@@ -23,18 +25,7 @@ export default defineConfig({
       fileName: () => 'atom-authorization.js'
     },
     rollupOptions: {
-      external: [
-        'react',
-        'react-dom',
-        'inversify',
-        'formik',
-        'react-router-dom',
-        'reflect-metadata',
-        'react-redux',
-        '@automapper/core',
-        '@automapper/classes',
-        /^@atom/
-      ],
+      external: [...packageJSON.externalDeps, 'react', 'react-dom', /^@atom/],
       output: {
         intro: `const process = {env: ${JSON.stringify(process.env)}}`
       }

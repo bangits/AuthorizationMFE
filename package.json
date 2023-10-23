@@ -71,6 +71,7 @@
     "@atom/user-management": "^0.2.0",
     "@automapper/classes": "^7.0.2",
     "@automapper/core": "^7.0.2",
+    "@pandacss/node": "^0.17.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@vitejs/plugin-react": "^4.1.0",
     "formik": "^2.2.9",
@@ -84,7 +85,7 @@
     "react-router-dom": "5.3.0",
     "reflect-metadata": "^0.1.13",
     "single-spa": "^5.9.3",
-    "single-spa-react": "^4.4.0",
+    "single-spa-react": "^5.1.4",
     "yup": "^0.32.10"
   },
   "externalDeps": [
