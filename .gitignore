@@ -61,6 +61,10 @@ typings/
 .next
 dist
 
+# Panda
+styled-system
+styled-system-static
+
 # Editor directories and files
 .idea
 .vscode
